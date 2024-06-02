@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhar Card Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #7CE0F9;
+            padding: 10px 20px;
+        }
+        .logo {
+            max-width: 100px;
+        }
+        .header-right a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-heading {
+            background-color: #76C4AE;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        h2 {
+            margin: 0;
+        }
+        h2.form-heading {
+            margin-bottom: 20px;
+        }
+        h2.form-heading + h2 {
+            margin-top: 0;
+        }
+        .confirmation-message {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .confirmation-message.success {
+            color: green;
+        }
+        .confirmation-message.error {
+            color: red;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #76C4AE;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="header-right">
+                <a th:href="@{/home}">Home</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </header>
+<div class="container">
+    <div class="form-heading">
+        <h2>Aadhar Card Application Form</h2>
+    </div>
+    <form th:action="@{/adhar/save}" th:object="${customer}" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required th:field="*{name}" placeholder="Enter your name">
+        
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required th:field="*{address}"></textarea>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required th:field="*{phone_number}" >
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required th:field="*{email}" >
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required th:field="*{gender}">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option> 
+        <input type="submit" value="Submit">
+    </form>
+    
+</div>
+
+
+</script>
+
+</body>
+</html>

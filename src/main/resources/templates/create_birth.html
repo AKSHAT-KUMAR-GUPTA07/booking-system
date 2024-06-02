@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Certificate Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #7CE0F9;
+            padding: 10px 20px;
+        }
+        .logo {
+            max-width: 100px;
+        }
+        .header-right a {
+            color: black;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-heading {
+            background-color: #76C4AE;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        h2 {
+            margin: 0;
+        }
+        h2.form-heading {
+            margin-bottom: 20px;
+        }
+        h2.form-heading + h2 {
+            margin-top: 0;
+        }
+        .confirmation-message {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .confirmation-message.success {
+            color: green;
+        }
+        .confirmation-message.error {
+            color: red;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #76C4AE;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="header-right">
+                <a href="test.html">Home</a>
+                <a href="test.html">Services</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </header>
+<div class="container">
+    <div class="form-heading">
+        <h2>Birth Certificate Application Form</h2>
+    </div>
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        
+        <label for="place">Place of Birth:</label>
+        <input type="text" id="place" name="place" required>
+        
+        <label for="father_name">Father's Name:</label>
+        <input type="text" id="father_name" name="father_name" required>
+        
+        <label for="mother_name">Mother's Name:</label>
+        <input type="text" id="mother_name" name="mother_name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    <div class="confirmation-message success" style="display: none;">Application submitted successfully!</div>
+    <div class="confirmation-message error" style="display: none;">Failed to submit application. Please try again.</div>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var isSuccess = Math.random() < 0.5;
+        if (isSuccess) {
+            document.querySelector('.confirmation-message.success').style.display = 'block';
+            document.querySelector('.confirmation-message.error').style.display = 'none';
+        } else {
+            document.querySelector('.confirmation-message.success').style.display = 'none';
+            document.querySelector('.confirmation-message.error').style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>

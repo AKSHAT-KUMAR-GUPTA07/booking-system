@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-right">
+                <a th:href="@{/home}">Home</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Welcome to the Portal</h1>
+        </section>
+        <section class="info">
+            <h2>About us</h2>
+            <div class="info-box">
+                <p>This a platform where all your identification certificates can be applied online and pay the applicable fee through safe channels.</p>
+                <p>After thorough verification we will deliver your certificates to the address provided by you.</p>
+            </div>
+        </section>
+        <section class="services">
+            <h2>Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <a href="#">
+                    <h3>Birth Certificate</h3>
+                    <p>Apply for your Birth certificates.</p>
+                </a>
+                </div>
+                <div class="card">
+                    <a th:href="@{adhar/new}">
+                    <h3>Aadhar Card</h3>
+                    <p>Apply for your Aadhar cards.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a th:href="@{/voter/new}">
+                    <h3>Voter ID</h3>
+                    <p>Apply for your Voter ID.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3>Driving Licence</h3>
+                    <p>Apply for your Driving Licence.</p>
+                </div>
+                <div class="card">
+                    <h3>PAN card</h3>
+                    <p>Apply for your PAN card.</p>
+                </div>
+                <div class="card">
+                    <h3>Passport</h3>
+                    <p>Apply for your Passport.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>All Rights Reserved, 2024.</p>
+    </footer>
+</body>
+</html>
